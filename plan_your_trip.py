@@ -1,6 +1,7 @@
 def hotel_cost(nights):
     return 140 * nights
 
+
 def plane_ride_cost(city):
     return {
         'Charlotte': 183,
@@ -8,6 +9,7 @@ def plane_ride_cost(city):
         'Pittsburgh': 222,
         'Los Angeles': 475
     }[city]
+
 
 def rental_car_cost(days):
     daily = days * 40
@@ -18,8 +20,10 @@ def rental_car_cost(days):
     else:
         return daily
 
+
 def trip_cost(city, days, spending_money):
     daily_cost = rental_car_cost(days) + hotel_cost(days)
     return plane_ride_cost(city) + daily_cost + spending_money
+
 
 print trip_cost('Los Angeles', 5, 600)
