@@ -63,12 +63,13 @@ def turn(board, battleship, turn_count):
     return True
 
 
-def game(size, turns):
-    board = []
-    for x in range(size):
-        board.append(["O"] * size)
-    battleship = random_point(board)
+def report_game_over(board, battleship):
+    point_set(board, battleship, '*')
+    print 'Game over! My battleship is at the *:'
+    print_board(board)
 
+
+def run_game(board, battleship, turns):
     print "Let's play Battleship!"
 
     for turn_count in range(turns):
@@ -78,6 +79,15 @@ def game(size, turns):
             return
         print
 
-    print 'Game over!'
+    report_game_over(board, battleship)
 
-game(10, 5)
+
+def game(size, turns):
+    board = []
+    for x in range(size):
+        board.append(["O"] * size)
+    battleship = random_point(board)
+    run_game(board, battleship, turns)
+
+
+game(5, 5)
