@@ -26,7 +26,7 @@ def get_int(prompt):
     while True:
         try:
             return int(raw_input(prompt))
-        except TypeError:
+        except ValueError:
             print "That's not a number!"
 
 
